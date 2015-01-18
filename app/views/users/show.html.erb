@@ -1,0 +1,13 @@
+<h1>
+  <%= @user.email %>
+</h1>
+
+<ol>
+  <% @chirps.each do |chirp| -%>
+    <li>
+      <%= chirp.createdAt %>
+      <%= chirp.text %>
+      <%= chirp.likes.count %> Likes
+    </li>
+  <% end -%>
+</ol>
