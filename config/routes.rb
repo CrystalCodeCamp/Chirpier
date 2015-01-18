@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'chirps#index'
 
+  resources :users, only: [:show]
+
   resources :likes
 
   resources :chirps
