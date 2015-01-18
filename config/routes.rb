@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'chirps#index'
+
   resources :likes
 
   resources :chirps
