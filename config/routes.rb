@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   root to: 'chirps#index'
+
+  devise_for :users
 
   resources :users, only: [:show]
 
-  resources :likes
-
-  resources :chirps
+  resources :chirps, except: [:edit, :update] do
+    resources :likes, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
